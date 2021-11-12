@@ -1,4 +1,5 @@
 import './Board.css';
+import ToggleTheme from '../ToggleTheme/ToggleTheme';
 
 function Board() {
 	return (
@@ -6,7 +7,7 @@ function Board() {
 			<div className="title">
 				<h1>Tic Tac Toe</h1>
 			</div>
-
+			<ToggleTheme />
 			<table>
 				<tr>
 					<td></td>
