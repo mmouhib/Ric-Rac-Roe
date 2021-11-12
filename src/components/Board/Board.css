@@ -1,14 +1,26 @@
-/*
-static => default
-relative
+body {
+	background-color: rgb(148, 147, 147);
+}
 
-*/
-
+td {
+	width: 20vh;
+	height: 20vh;
+	text-align: center;
+	font-size: 10rem;
+}
+table {
+	margin: 5px auto;
+	margin-top: 20vh;
+}
 .vert {
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border-left: 4px solid black;
+	border-right: 4px solid black;
 }
 .hori {
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	border-top: 4px solid black;
+	border-bottom: 4px solid black;
+}
+
+td:hover {
+	background-color: rgb(65, 63, 63);
 }
