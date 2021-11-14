@@ -7,7 +7,7 @@ function Board() {
 			<div className="title">
 				<h1>Tic Tac Toe</h1>
 			</div>
-			<ToggleTheme />
+			<ToggleTheme className="toggletheme" />
 			<table>
 				<tr>
 					<td></td>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Road+Rage&display=swap');
-
 body {
 	/* background-color: rgb(148, 147, 147); */
 	background-color: #282c34;
@@ -66,4 +65,8 @@ tr {
 	background-image: linear-gradient(90deg, red, blue);
 	background-clip: text;
 	color: transparent;
+}
+
+.ToggleTheme {
+	margin-left: 50%;
 }
