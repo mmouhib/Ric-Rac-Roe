@@ -2,7 +2,6 @@ import './ToggleTheme.css';
 import dark from '../../img/dark.png';
 import light from '../../img/light.png';
 
-// nfn
 const clickHandler = (e) => {
 	if (e.target.src === dark) {
 		e.target.src = light;
