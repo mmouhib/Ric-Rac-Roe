@@ -2,7 +2,7 @@ import './Game.css';
 import ToggleTheme from '../ToggleTheme/ToggleTheme';
 import Board from '../Board/Board';
 
-function Game() {
+const Game = () => {
 	return (
 		<div className="Game">
 			<div className="title">
@@ -21,6 +21,6 @@ function Game() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Game;

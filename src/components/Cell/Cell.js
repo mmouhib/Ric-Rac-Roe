@@ -1,6 +1,6 @@
 import './Cell.css';
 
-function Cell() {
+const Cell = () => {
 	return (
 		<div className="Cell">
 			<tr>
@@ -10,6 +10,6 @@ function Cell() {
 			</tr>
 		</div>
 	);
-}
+};
 
 export default Cell;

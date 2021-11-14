@@ -13,7 +13,7 @@ const clickHandler = (e) => {
 	e.target.alt = 'dark mode';
 };
 
-function ToggleTheme() {
+const ToggleTheme = () => {
 	return (
 		<div className="ToggleTheme">
 			<img
@@ -25,6 +25,6 @@ function ToggleTheme() {
 			/>
 		</div>
 	);
-}
+};
 
 export default ToggleTheme;

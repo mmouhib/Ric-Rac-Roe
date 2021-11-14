@@ -1,7 +1,7 @@
 import './Board.css';
 import Cell from '../Cell/Cell';
 
-function Board() {
+const Board = () => {
 	return (
 		<div className="board">
 			<table>
@@ -11,6 +11,6 @@ function Board() {
 			</table>
 		</div>
 	);
-}
+};
 
 export default Board;

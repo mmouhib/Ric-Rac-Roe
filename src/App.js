@@ -1,12 +1,12 @@
 import './App.css';
 import Game from './components/Game/Game';
 
-function App() {
+const App = () => {
 	return (
 		<div className="cnt">
 			<Game />
 		</div>
 	);
-}
+};
 
 export default App;
