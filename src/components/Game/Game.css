@@ -11,8 +11,6 @@ body {
 	font-family: 'Orbitron', sans-serif;
 }
 
-
-
 span {
 	font-weight: bold;
 	color: blueviolet;
@@ -36,8 +34,4 @@ p {
 	background-image: linear-gradient(90deg, red, blue);
 	background-clip: text;
 	color: transparent;
-}
-
-.ToggleTheme {
-	margin-left: 50%;
 }

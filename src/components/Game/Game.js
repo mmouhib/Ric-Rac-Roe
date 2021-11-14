@@ -7,12 +7,9 @@ import Fullscreen from '../Fullscreen/Fullscreen';
 const Game = () => {
 	return (
 		<div className="Game">
-			<div className="title">
-				<h1>Tic Tac Toe</h1>
-			</div>
-			<ToggleTheme className="toggletheme" />
+			<ToggleTheme />
 			<Fullscreen />
-
+			<h1 className="title">Tic Tac Toe</h1>
 			<Board />
 			<Reset onClick="{clickHandler}" />
 			<div className="score">

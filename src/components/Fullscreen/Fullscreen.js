@@ -1,16 +1,17 @@
 import React from 'react';
 import './Fullscreen.css';
-import exitFullscreenDark from '../../img/Fullscreen/exitFullscreenDark.png';
+
 import exitFullscreenLight from '../../img/Fullscreen/exitFullscreenLight.png';
-import FullscreenDark from '../../img/Fullscreen/fullscreenDark.png';
 import FullscreenLight from '../../img/Fullscreen/fullscreenLight.png';
+// import exitFullscreenDark from '../../img/Fullscreen/exitFullscreenDark.png';
+// import FullscreenDark from '../../img/Fullscreen/fullscreenDark.png';
 
 const handleClick = (e) => {
-	if (e.target.src === FullscreenDark) {
-		e.target.src = FullscreenLight;
+	if (e.target.src === FullscreenLight) {
+		e.target.src = exitFullscreenLight;
 		return;
 	}
-	e.target.src = exitFullscreenLight;
+	e.target.src = FullscreenLight;
 };
 
 const Fullscreen = () => (
