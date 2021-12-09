@@ -14,7 +14,7 @@ const handleClick = (e) => {
 	e.target.src = FullscreenLight;
 };
 
-const Fullscreen = () => (
+const Fullscreen = (props) => (
 	<div className="Fullscreen">
 		<img
 			src={FullscreenLight}
