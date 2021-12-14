@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Road+Rage&display=swap');
+
+table {
+	margin: 5px auto;
+	margin-top: 5vh;
+	margin-bottom: 7vh;
+	border-spacing: 30px 10px; /*this*/
+}
+td {
+	width: 15vh;
+	height: 15vh;
+	text-align: center;
+	font-size: 8rem;
+	border: 5px solid rgb(240, 240, 240);
+	border-radius: 15px;
+	color: aqua;
+}
+
+td:hover {
+	background-color: rgb(131, 148, 163);
+}
+.Fullscreen {
+	position: absolute;
+	top: 2%;
+	right: 1%;
+}
+body {
+	/* background-color: rgb(148, 147, 147); */
+	background-color: #282c34;
+	font-family: 'Road Rage', cursive;
+}
+
+span {
+	font-weight: bold;
+	color: blueviolet;
+}
+
+h1 {
+	text-align: center;
+	font-size: 6rem;
+	margin: 0;
+}
+
+#p1 {
+	margin-right: 45px;
+}
+
+p {
+	display: inline-block;
+}
+
+.title {
+	background-image: linear-gradient(90deg, red, blue);
+	background-clip: text;
+	color: transparent;
+}
+
+button {
+	width: 70px;
+	height: 35px;
+	border: 3px solid rgb(42, 176, 194);
+	color: wheat;
+	border-radius: 7px;
+	background-color: transparent;
+	font-family: 'Road Rage', cursive;
+	font-size: larger;
+	font-weight: bold;
+}
+
+button:hover {
+	border: 2.5px dotted rgb(9, 142, 194);
+	background-color: rgb(42, 176, 194);
+	color: #8a2be2;
+}
+
+.Reset {
+	text-align: center;
+}
+.Score {
+	text-align: center;
+	font-size: 1.5rem;
+	font-family: 'Orbitron', sans-serif;
+}
+.ToggleTheme {
+	position: absolute;
+	top: 2%;
+	left: 1%;
+}

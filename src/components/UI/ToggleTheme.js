@@ -1,4 +1,3 @@
-import './ToggleTheme.css';
 import dark from '../../img/dark.png';
 import light from '../../img/light.png';
 

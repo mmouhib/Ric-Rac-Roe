@@ -1,9 +1,6 @@
-import React from 'react';
-import './Score.css';
-
 const Score = () => {
 	return (
-		<div>
+		<div className="Score">
 			<p id="p1">
 				Player 1: <span>0</span>
 			</p>
@@ -15,4 +12,3 @@ const Score = () => {
 };
 
 export default Score;
-

@@ -1,9 +1,8 @@
-import './Game.css';
-import ToggleTheme from '../ToggleTheme/ToggleTheme';
-import Board from '../Board/Board';
-import Reset from '../Reset/Reset';
-import Fullscreen from '../Fullscreen/Fullscreen';
-import Score from '../Score/Score';
+import ToggleTheme from '../UI/ToggleTheme';
+import Board from './Board';
+import Reset from './Reset';
+import Fullscreen from '../UI/Fullscreen';
+import Score from './Score';
 
 const Game = () => {
 	return (
