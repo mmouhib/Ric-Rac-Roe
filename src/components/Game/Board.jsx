@@ -1,4 +1,4 @@
-import Cell from './Cell';
+import Cell from './Cell.jsx';
 import { useState } from 'react';
 
 const Board = () => {
