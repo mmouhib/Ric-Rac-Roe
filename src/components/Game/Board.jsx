@@ -1,6 +1,10 @@
 import Cell from './Cell.jsx';
 import { useState } from 'react';
 
+const logoSwitcher = (logo) => {
+	logo = logo == 'X' ? 'O' : 'X';
+};
+
 const Board = () => {
 	const [logo, setLogo] = useState('X');
 
@@ -8,6 +12,7 @@ const Board = () => {
 		<div className="board">
 			<table>
 				<tr>
+					{console.log(logoSwitcher('X'))}
 					<Cell id="1" logo={logo} />
 					<Cell id="2" logo={logo} />
 					<Cell id="3" logo={logo} />
