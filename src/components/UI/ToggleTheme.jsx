@@ -13,7 +13,7 @@ const clickHandler = (e) => {
 
 const ToggleTheme = () => {
 	return (
-		<div className="ToggleTheme">
+		<div className="toggle-theme">
 			<img
 				src={dark}
 				alt="dark mode"

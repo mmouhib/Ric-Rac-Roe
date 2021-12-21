@@ -1,5 +1,5 @@
 const Reset = () => (
-	<div className="Reset">
+	<div className="reset">
 		<button>Reset</button>
 	</div>
 );

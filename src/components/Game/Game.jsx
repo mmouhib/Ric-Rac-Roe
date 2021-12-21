@@ -6,12 +6,12 @@ import Score from './Score.jsx';
 
 const Game = () => {
 	return (
-		<div className="Game">
+		<div className='Game'>
 			<ToggleTheme />
 			<Fullscreen />
-			<h1 className="title">Tic Tac Toe</h1>
+			<h1 className='title'>Tic Tac Toe</h1>
 			<Board />
-			<Reset onClick="{clickHandler}" />
+			<Reset />
 			<Score />
 		</div>
 	);

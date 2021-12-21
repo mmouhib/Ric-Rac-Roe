@@ -12,7 +12,7 @@ const handleClick = (e) => {
 };
 
 const Fullscreen = (props) => (
-	<div className="Fullscreen">
+	<div className="fullscreen">
 		<img
 			src={FullscreenLight}
 			alt="FullscreenDark"
