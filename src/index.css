@@ -69,6 +69,7 @@ button:hover {
 	border-radius: 12px;
 	color: wheat;
 	margin: 10px;
+	cursor: pointer;
 }
 
 .cell:hover{
@@ -78,7 +79,8 @@ button:hover {
 .board{
 	display: flex;
 	margin: 10% 10% 10% 22%;
-
 	/*flex-direction: column;*/
 }
+
+
 
