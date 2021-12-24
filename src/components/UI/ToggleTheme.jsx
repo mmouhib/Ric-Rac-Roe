@@ -1,28 +1,21 @@
-import dark from '../../img/dark.png';
-import light from '../../img/light.png';
-
-const clickHandler = (e) => {
-	if (e.target.src === dark) {
-		e.target.src = light;
-		e.target.alt = 'light mode';
-		return;
-	}
-	e.target.src = dark;
-	e.target.alt = 'dark mode';
-};
+import { useState } from "react";
+import dark from "../../img/ToggleTheme/dark.png";
+import light from "../../img/ToggleTheme/light.png";
 
 const ToggleTheme = () => {
-	return (
-		<div className="toggle-theme">
-			<img
-				src={dark}
-				alt="dark mode"
-				onClick={(e) => {
-					clickHandler(e);
-				}}
-			/>
-		</div>
-	);
+  const [source, setSource] = useState(dark);
+
+  return (
+    <div className="toggle-theme">
+      <img
+        alt="dark mode"
+        onClick={() => {
+          source === dark ? setSource(light) : setSource(dark);
+        }}
+        src={source.toString()}
+      />
+    </div>
+  );
 };
 
 export default ToggleTheme;

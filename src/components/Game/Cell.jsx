@@ -7,10 +7,7 @@ const Cell = ({ id, value, affectChoice, radar, setRadar }) => {
           affectChoice(id);
           setRadar(
             radar.map((element, index) => {
-              if (index === id) {
-                return true;
-              }
-              return false;
+              return index === id;
             })
           );
         }

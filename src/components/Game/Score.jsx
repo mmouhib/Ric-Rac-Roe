@@ -1,11 +1,11 @@
-const Score = () => {
+const Score = (props) => {
   return (
     <div className="score">
       <p id="p1">
-        X : <span>0</span>
+        X : <span>{props.scoreCross}</span>
       </p>
       <p>
-        O : <span>0</span>
+        O : <span>{props.scoreCircle}</span>
       </p>
     </div>
   );

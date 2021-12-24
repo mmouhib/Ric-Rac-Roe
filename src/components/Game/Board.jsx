@@ -7,20 +7,31 @@ const isFull = (board) => {
   });
 };
 
-const Board = ({ setBoard, board, logo, setLogo }) => {
+const Board = ({
+  setBoard,
+  board,
+  logo,
+  setLogo,
+  scoreCross,
+  setScoreCross,
+  scoreCircle,
+  setScoreCircle,
+}) => {
   const [radar, setRadar] = useState(Array(9).fill(false));
 
   useEffect(() => {
     if (winner(board, "X")) {
       alert("X wins");
+      setScoreCross(scoreCross + 1);
       setBoard(Array(9).fill(""));
     } else if (winner(board, "O")) {
       alert("O wins");
+      setScoreCircle(scoreCircle + 1);
       setBoard(Array(9).fill(""));
     } else if (isFull(board)) {
       alert("DRAW!");
     }
-  }, [board]);
+  }, [board, scoreCircle, scoreCross, setBoard, setScoreCircle, setScoreCross]);
 
   const affectChoice = (id) => {
     setBoard(
