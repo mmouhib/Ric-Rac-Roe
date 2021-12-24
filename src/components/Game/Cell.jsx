@@ -1,42 +1,16 @@
-const Cell = ({
-  id,
-  board,
-  setBoard,
-  logo,
-  setLogo,
-  value,
-  radar,
-  setRadar,
-}) => {
+const Cell = ({ id, value, affectChoice, radar, setRadar }) => {
   return (
     <div
       id={id}
       onClick={() => {
-        // here we're making sure that the box clicked is not already clicked before so the choice doesn't happen again
-        //using the radar array that contains whether each element of the board was clicked before or not
         if (radar[id] === false) {
-          setBoard(
-            board.map((element, index) => {
+          affectChoice(id);
+          setRadar(
+            radar.map((element, index) => {
               if (index === id) {
-                let symbol = logo;
-                if (logo === "X") {
-                  setLogo("O");
-                } else {
-                  setLogo("X");
-                }
-                setRadar(
-                  radar.map((element, index) => {
-                    return index === id;
-                  })
-                );
-                return symbol;
+                return true;
               }
-              setRadar(
-                radar.map((element, index) => {
-                  return index === id;
-                })
-              );
-              return element;
+              return false;
             })
           );
         }
