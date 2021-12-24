@@ -63,23 +63,27 @@ button:hover {
 .cell {
 	text-align: center;
 	font-size: 10vh;
-	width: 5vw;
+	width: 3vw;
 	height: 10vh;
 	border: 3px solid #c74561;
 	border-radius: 12px;
 	color: wheat;
 	margin: 10px;
 	cursor: pointer;
+
+	list-style: none;
+	flex: 0 0 25%;
 }
 
 .cell:hover{
 	background-color: #42464e;
+
 }
 
 .board{
 	display: flex;
-	margin: 10% 10% 10% 22%;
-	/*flex-direction: column;*/
+	flex-wrap: wrap;
+	margin: 5% 10% 5% 22%;
 }
 
 

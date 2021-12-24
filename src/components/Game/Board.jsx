@@ -30,6 +30,7 @@ const Board = ({
       setBoard(Array(9).fill(""));
     } else if (isFull(board)) {
       alert("DRAW!");
+      setBoard(Array(9).fill(""));
     }
   }, [board, scoreCircle, scoreCross, setBoard, setScoreCircle, setScoreCross]);
 
