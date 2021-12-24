@@ -1,20 +1,9 @@
+import Reset from "./Reset";
 import { useState } from "react";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import Fullscreen from "../UI/Fullscreen.jsx";
-
-const Reset = (props) => (
-  <div className="reset">
-    <button
-      onClick={() => {
-        props.setBoard(["", "", "", "", "", "", "", "", ""]);
-      }}
-    >
-      Reset
-    </button>
-  </div>
-);
 
 // checks if the board is full and cannot accept more inputs
 const filledBoard = (board) => {
@@ -40,19 +29,22 @@ const compareElements = (
 // checks if the given logo is a winner
 const winner = (board, logo) => {
   return (
+    // horizontal
     compareElements(board[0], board[1], board[2], logo) ||
     compareElements(board[3], board[4], board[5], logo) ||
     compareElements(board[6], board[7], board[8], logo) ||
+    // vertical
     compareElements(board[0], board[3], board[6], logo) ||
     compareElements(board[1], board[4], board[5], logo) ||
     compareElements(board[2], board[5], board[8], logo) ||
-    compareElements(board[1], board[4], board[8], logo) ||
+    // diagonal
+    compareElements(board[0], board[4], board[8], logo) ||
     compareElements(board[2], board[5], board[8], logo)
   );
 };
 
 const Game = () => {
-  const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
+  const [board, setBoard] = useState(Array(9).fill(""));
   const [logo, setLogo] = useState("X");
 
   return (
@@ -60,7 +52,13 @@ const Game = () => {
       <ToggleTheme />
       <Fullscreen />
       <h1 className="title">Tic Tac Toe</h1>
-      <Board setBoard={setBoard} board={board} logo={logo} setLogo={setLogo} />
+      <Board
+        setBoard={setBoard}
+        board={board}
+        logo={logo}
+        setLogo={setLogo}
+        winner={winner}
+      />
       <Reset setBoard={setBoard} />
       <Score />
     </div>
