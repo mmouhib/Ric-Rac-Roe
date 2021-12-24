@@ -2,7 +2,7 @@ import { useState } from "react";
 import dark from "../../img/ToggleTheme/dark.png";
 import light from "../../img/ToggleTheme/light.png";
 
-const ToggleTheme = () => {
+const ToggleTheme = (props) => {
   const [source, setSource] = useState(dark);
 
   return (
@@ -11,6 +11,7 @@ const ToggleTheme = () => {
         alt="dark mode"
         onClick={() => {
           source === dark ? setSource(light) : setSource(dark);
+          props.setTheme(!props.theme);
         }}
         src={source.toString()}
       />

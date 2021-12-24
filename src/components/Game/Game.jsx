@@ -10,11 +10,12 @@ const Game = () => {
   const [logo, setLogo] = useState("X");
   const [scoreCross, setScoreCross] = useState(0);
   const [scoreCircle, setScoreCircle] = useState(0);
+  const [theme, setTheme] = useState(true);
 
   return (
     <div className="Game">
-      <ToggleTheme />
-      <Fullscreen />
+      <ToggleTheme theme={theme} setTheme={setTheme} />
+      <Fullscreen theme={theme} />
       <h1 className="title">Tic Tac Toe</h1>
       <Board
         setBoard={setBoard}
