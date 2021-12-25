@@ -12,6 +12,15 @@ const Game = () => {
   const [scoreCircle, setScoreCircle] = useState(0);
   const [theme, setTheme] = useState(true);
 
+  const resetBoard = () => {
+    setBoard(Array(9).fill(""));
+  };
+
+  const resetScore = () => {
+    setScoreCross(0);
+    setScoreCircle(0);
+  };
+
   return (
     <div className="Game">
       <ToggleTheme theme={theme} setTheme={setTheme} />
@@ -27,8 +36,9 @@ const Game = () => {
         setScoreCross={setScoreCross}
         setScoreCircle={setScoreCircle}
       />
-      <Reset setBoard={setBoard} />
+      <Reset reset={resetBoard} content="reset board" />
       <Score scoreCross={scoreCross} scoreCircle={scoreCircle} />
+      <Reset reset={resetScore} content="reset score" />
     </div>
   );
 };
