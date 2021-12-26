@@ -6,7 +6,7 @@ const StyledCell = styled.div`
   height: 6vw;
   border: 3px solid #bb86fc;
   border-radius: 100%;
-  color: wheat;
+  color: white;
   margin: 10px;
   cursor: pointer;
   padding-top: 7%;

@@ -51,9 +51,9 @@ const Game = () => {
         score={score}
         setScore={setScore}
       />
-      <Reset reset={resetBoard} content="reset board" />
+      <Reset reset={resetBoard} content="Reset Board" />
       <Score score={score} />
-      <Reset reset={resetScore} content="reset score" />
+      <Reset reset={resetScore} content="Reset Score" />
     </div>
   );
 };
