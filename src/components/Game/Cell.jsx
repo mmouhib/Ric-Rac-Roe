@@ -2,14 +2,17 @@ import styled from "styled-components";
 const StyledCell = styled.div`
   text-align: center;
   font-size: 10vh;
-  width: 5vw;
-  height: 10vh;
+  width: 6vw;
+  min-width: 4vw;
+  min-height: 4vh;
+  height: 6vw;
   border: 5px solid #c74561;
-  border-radius: 50px;
+  border-radius: 25%;
   color: wheat;
   margin: 10px;
   cursor: pointer;
   flex: 0 0 25%;
+  padding-top: 10%;
 
   &:hover {
     background-color: #42464e;

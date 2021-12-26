@@ -4,6 +4,7 @@ const StyledScore = styled.div`
   text-align: center;
   font-size: 1.5rem;
   font-family: "Orbitron", sans-serif;
+  margin: auto auto 2% 2%;
 
   span {
     font-weight: bold;
@@ -12,7 +13,7 @@ const StyledScore = styled.div`
 
   p {
     display: inline-block;
-    margin: 0 45px 45px 45px;
+    margin: 0 45px 0 45px;
   }
 `;
 

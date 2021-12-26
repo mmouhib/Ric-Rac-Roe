@@ -4,20 +4,21 @@ const StyledReset = styled.div`
   text-align: center;
 
   button {
-    width: 100px;
-    height: 35px;
+    width: 5rem;
+    height: 2.5rem;
     font-weight: bold;
     background-color: #ff6384;
     border: none;
     border-radius: 10px;
     color: white;
     text-transform: uppercase;
-    margin-bottom: 2%;
+    font-size: smaller;
+    margin: auto auto 2% 2%;
   }
 
   button:hover {
-    background-color: #c74561;
-    color: white;
+    background-color: white;
+    color: #ff6384;
   }
 `;
 

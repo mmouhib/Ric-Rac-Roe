@@ -6,14 +6,14 @@ import styled from "styled-components";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import Fullscreen from "../UI/Fullscreen.jsx";
 
-const Styledtitle = styled.h1`
+const StyledTitle = styled.h1`
   font-family: "Wallpoet", cursive;
   background-image: linear-gradient(90deg, red, blue);
   background-clip: text;
   color: transparent;
   text-align: center;
   font-size: 6rem;
-  margin: 0;
+  margin: 0 auto;
 `;
 
 const Game = () => {
@@ -36,7 +36,7 @@ const Game = () => {
     <div>
       <ToggleTheme theme={theme} setTheme={setTheme} />
       <Fullscreen theme={theme} />
-      <Styledtitle>Tic Tac Toe</Styledtitle>
+      <StyledTitle theme={theme}>Tic Tac Toe</StyledTitle>
       <Board
         setBoard={setBoard}
         board={board}

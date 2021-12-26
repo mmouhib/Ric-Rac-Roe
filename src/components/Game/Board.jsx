@@ -3,12 +3,11 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledDiv = styled.div`
-  width: 23vw;
+  width: 20vw;
   display: grid;
-  gap: 1%;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin: 5% 10% 5% 39%;
+  margin: 3% auto 3% auto;
 `;
 
 const isFull = (board) => {
