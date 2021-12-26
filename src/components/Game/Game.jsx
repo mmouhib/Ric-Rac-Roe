@@ -19,8 +19,11 @@ const StyledTitle = styled.h1`
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [logo, setLogo] = useState("X");
-  const [scoreCross, setScoreCross] = useState(0);
-  const [scoreCircle, setScoreCircle] = useState(0);
+  const [score, setScore] = useState({
+    scoreCross: 0,
+    scoreCircle: 0,
+    scoreDraw: 0,
+  });
   const [theme, setTheme] = useState(true);
 
   const resetBoard = () => {
@@ -28,8 +31,11 @@ const Game = () => {
   };
 
   const resetScore = () => {
-    setScoreCross(0);
-    setScoreCircle(0);
+    setScore({
+      scoreCross: 0,
+      scoreCircle: 0,
+      scoreDraw: 0,
+    });
   };
 
   return (
@@ -38,17 +44,15 @@ const Game = () => {
       <Fullscreen theme={theme} />
       <StyledTitle theme={theme}>Tic Tac Toe</StyledTitle>
       <Board
-        setBoard={setBoard}
         board={board}
+        setBoard={setBoard}
         logo={logo}
         setLogo={setLogo}
-        scoreCross={scoreCross}
-        scoreCircle={scoreCircle}
-        setScoreCross={setScoreCross}
-        setScoreCircle={setScoreCircle}
+        score={score}
+        setScore={setScore}
       />
       <Reset reset={resetBoard} content="reset board" />
-      <Score scoreCross={scoreCross} scoreCircle={scoreCircle} />
+      <Score score={score} />
       <Reset reset={resetScore} content="reset score" />
     </div>
   );

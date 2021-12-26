@@ -1,6 +1,6 @@
 import Cell from "./Cell";
-import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 const StyledDiv = styled.div`
   width: 20vw;
@@ -16,32 +16,24 @@ const isFull = (board) => {
   });
 };
 
-const Board = ({
-  setBoard,
-  board,
-  logo,
-  setLogo,
-  scoreCross,
-  setScoreCross,
-  scoreCircle,
-  setScoreCircle,
-}) => {
+const Board = ({ board, setBoard, logo, setLogo, score, setScore }) => {
   const [radar, setRadar] = useState(Array(9).fill(false));
 
   useEffect(() => {
     if (winner(board, "X")) {
+      setScore({ ...score, scoreCross: score.scoreCross + 1 });
       alert("X wins");
-      setScoreCross(scoreCross + 1);
       setBoard(Array(9).fill(""));
     } else if (winner(board, "O")) {
+      setScore({ ...score, scoreCircle: score.scoreCircle + 1 });
       alert("O wins");
-      setScoreCircle(scoreCircle + 1);
       setBoard(Array(9).fill(""));
     } else if (isFull(board)) {
+      setScore({ ...score, scoreDraw: score.scoreDraw + 1 });
       alert("DRAW!");
       setBoard(Array(9).fill(""));
     }
-  }, [board, scoreCircle, scoreCross, setBoard, setScoreCircle, setScoreCross]);
+  }, [board, score, setBoard, setScore]);
 
   const affectChoice = (id) => {
     setBoard(

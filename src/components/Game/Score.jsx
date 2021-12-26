@@ -21,10 +21,13 @@ const Score = (props) => {
   return (
     <StyledScore>
       <p id="p1">
-        X : <span>{props.scoreCross}</span>
+        Player 1 (X) : <span>{props.score.scoreCross}</span>
       </p>
       <p>
-        O : <span>{props.scoreCircle}</span>
+        Player 2 (O) : <span>{props.score.scoreCircle}</span>
+      </p>
+      <p>
+        Draw : <span>{props.score.scoreDraw}</span>
       </p>
     </StyledScore>
   );
