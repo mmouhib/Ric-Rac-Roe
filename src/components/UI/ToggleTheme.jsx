@@ -1,12 +1,19 @@
 import { useState } from "react";
+import styled from "styled-components";
 import dark from "../../img/ToggleTheme/dark.png";
 import light from "../../img/ToggleTheme/light.png";
+
+const StyledToggleTheme = styled.div`
+  position: absolute;
+  top: 2%;
+  left: 1%;
+`;
 
 const ToggleTheme = (props) => {
   const [source, setSource] = useState(dark);
 
   return (
-    <div className="toggle-theme">
+    <StyledToggleTheme>
       <img
         alt="dark mode"
         onClick={() => {
@@ -15,7 +22,7 @@ const ToggleTheme = (props) => {
         }}
         src={source.toString()}
       />
-    </div>
+    </StyledToggleTheme>
   );
 };
 

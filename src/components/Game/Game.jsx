@@ -2,8 +2,19 @@ import Reset from "./Reset";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
 import { useState } from "react";
+import styled from "styled-components";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import Fullscreen from "../UI/Fullscreen.jsx";
+
+const Styledtitle = styled.h1`
+  font-family: "Wallpoet", cursive;
+  background-image: linear-gradient(90deg, red, blue);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-size: 6rem;
+  margin: 0;
+`;
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -22,10 +33,10 @@ const Game = () => {
   };
 
   return (
-    <div className="Game">
+    <div>
       <ToggleTheme theme={theme} setTheme={setTheme} />
       <Fullscreen theme={theme} />
-      <h1 className="title">Tic Tac Toe</h1>
+      <Styledtitle>Tic Tac Toe</Styledtitle>
       <Board
         setBoard={setBoard}
         board={board}

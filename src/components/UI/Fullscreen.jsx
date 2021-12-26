@@ -1,8 +1,15 @@
+import styled from "styled-components";
 import { useState, useEffect } from "react";
 import FullscreenDark from "../../img/Fullscreen/fullscreenDark.png";
 import FullscreenLight from "../../img/Fullscreen/fullscreenLight.png";
 import exitFullscreenDark from "../../img/Fullscreen/exitFullscreenDark.png";
 import exitFullscreenLight from "../../img/Fullscreen/exitFullscreenLight.png";
+
+const StyledFullscreen = styled.div`
+  position: absolute;
+  top: 2%;
+  right: 1%;
+`;
 
 const Fullscreen = ({ theme }) => {
   const [source, setSource] = useState(FullscreenDark);
@@ -15,7 +22,7 @@ const Fullscreen = ({ theme }) => {
   }, [theme]);
 
   return (
-    <div className="fullscreen">
+    <StyledFullscreen>
       <img
         src={source.toString()}
         alt="FullscreenDark"
@@ -33,7 +40,7 @@ const Fullscreen = ({ theme }) => {
           else setSource(FullscreenDark);
         }}
       />
-    </div>
+    </StyledFullscreen>
   );
 };
 
