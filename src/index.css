@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Road+Rage&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 
 body {
 	background-color: #282c34;
 	font-family: 'Road Rage', cursive;
+
 }
 .fullscreen {
 	position: absolute;
@@ -28,6 +30,8 @@ p {
 }
 
 .title {
+	font-family: 'Wallpoet', cursive;
+
 	background-image: linear-gradient(90deg, red, blue);
 	background-clip: text;
 	color: transparent;
@@ -65,23 +69,27 @@ button:hover {
 	font-size: 10vh;
 	width: 5vw;
 	height: 10vh;
-	border: 3px solid #c74561;
-	border-radius: 12px;
+	border: 5px solid #c74561;
+	border-radius: 50px;
 	color: wheat;
 	margin: 10px;
 	cursor: pointer;
 	flex: 0 0 25%;
 }
-
+.board{
+	width: 23vw;
+	display: grid;
+	gap: 1%;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	margin: 5% 10% 5% 39%;
+}
 .cell:hover{
+
 	background-color: #42464e;
 }
 
-.board{
-	display: flex;
-	flex-wrap: wrap;
-	margin: 5% 10% 5% 22%;
-}
+
 
 
 

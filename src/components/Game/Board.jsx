@@ -1,11 +1,19 @@
 import Cell from "./Cell";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 
 const isFull = (board) => {
   return !board.some((element) => {
     return element === "";
   });
 };
+
+const styledDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5% 10% 5% 22%;
+  
+`
 
 const Board = ({
   setBoard,
@@ -48,7 +56,7 @@ const Board = ({
   };
 
   return (
-    <div className="board">
+    <styledDiv className="board">
       {board.map((element, index) => {
         return (
           <Cell
@@ -60,7 +68,7 @@ const Board = ({
           />
         );
       })}
-    </div>
+    </styledDiv>
   );
 };
 
