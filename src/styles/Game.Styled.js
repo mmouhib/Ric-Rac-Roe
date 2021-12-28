@@ -1,21 +1,21 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+	
   body {
-    background-color: #282c34;
+    background-color: ${(props) => props.theme.bodyBg};
     font-family: 'Road Rage', cursive;
   }
 `;
 
 const StyledTitle = styled.h1`
-  font-family: "Wallpoet", cursive;
-  //background-image: linear-gradient(90deg, red, blue);
-  //background-clip: text;
-  //color: transparent;
-  color: ${(props) => props.theme.titleColor};
+  font-family: "Luckiest Guy", cursive;
+  background-image: linear-gradient(90deg, red, blue);
+  background-clip: text;
+  color: transparent;
   text-align: center;
-  font-size: 6rem;
-  margin: 0 auto;
+  font-size: 3rem;
+  margin: 2% 0 0 2%;
 `;
 
 export { GlobalStyle, StyledTitle };

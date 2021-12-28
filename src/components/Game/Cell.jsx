@@ -5,6 +5,7 @@ const Cell = ({ id, value, affectChoice, radar, setRadar }) => {
     <StyledCell
       id={id}
       onClick={() => {
+        // \n checks if the cell is already chosen if not it will affect a choice
         if (radar[id] === false) {
           affectChoice(id);
           setRadar(

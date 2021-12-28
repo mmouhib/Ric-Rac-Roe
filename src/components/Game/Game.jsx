@@ -5,21 +5,12 @@ import { useState } from "react";
 import Fullscreen from "../UI/Fullscreen.jsx";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "../../themes";
 import { GlobalStyle, StyledTitle } from "../../styles/Game.Styled";
-
-let lightTheme = {
-  titleColor: "blue",
-  align: "right",
-};
-
-let darkTheme = {
-  titleColor: "red",
-  align: "center",
-};
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
-  const [isDark, setIsDark] = useState(false);
+  const [theme, setTheme] = useState(true);
   const [logo, setLogo] = useState("X");
   const [score, setScore] = useState({
     scoreCross: 0,
@@ -40,12 +31,12 @@ const Game = () => {
   };
 
   return (
-    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <GlobalStyle />
       <div>
-        <ToggleTheme theme={isDark} setTheme={setIsDark} />
-        <Fullscreen theme={isDark} />
-        <StyledTitle theme={isDark}>Ric Rac Roe</StyledTitle>
+        <ToggleTheme theme={theme} setTheme={setTheme} />
+        <Fullscreen theme={theme} />
+        <StyledTitle theme={theme}>Ric Rac Roe</StyledTitle>
         <Board
           board={board}
           setBoard={setBoard}

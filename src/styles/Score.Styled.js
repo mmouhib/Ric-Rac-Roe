@@ -8,10 +8,11 @@ const StyledScore = styled.div`
 
   span {
     font-weight: bold;
-    color: blueviolet;
+    color: ${(props) => props.theme.scoreNumbers};
   }
 
   p {
+    color: ${(props) => props.theme.scoreTitles};
     display: inline-block;
     margin: 0 45px 0 45px;
   }

@@ -7,18 +7,17 @@ const StyledReset = styled.div`
     width: 8rem;
     height: 2.5rem;
     font-weight: bold;
-    background-color: #bb86fc;
+    background-color: ${(props) => props.theme.buttonBgColor};
     border: none;
     border-radius: 10px;
-    color: #2e2c31;
-    //text-transform: uppercase;
+    color: ${(props) => props.theme.buttonTextColor};
     font-size: larger;
     margin: auto auto 2% 2%;
   }
 
   button:hover {
-    background-color: white;
-    color: #e05672;
+    background-color: ${(props) => props.theme.buttonBgHoverColor};
+    color: ${(props) => props.theme.buttonTextHoverColor};
   }
 `;
 

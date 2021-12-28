@@ -4,15 +4,15 @@ const StyledCell = styled.div`
   font-size: 5vw;
   width: 6vw;
   height: 6vw;
-  border: 3px solid #bb86fc;
-  border-radius: 100%;
-  color: white;
+  border: 3px solid ${(props) => props.theme.cellBorderColor};
+  border-radius: 25%;
+  color: ${(props) => props.theme.cellColor};
   margin: 10px;
   cursor: pointer;
   padding-top: 7%;
 
   &:hover {
-    background-color: #42464e;
+    background-color: ${(props) => props.theme.cellHoverBackground};
   }
 `;
 
