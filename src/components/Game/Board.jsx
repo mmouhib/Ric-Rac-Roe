@@ -1,14 +1,6 @@
 import Cell from "./Cell";
-import styled from "styled-components";
 import { useEffect, useState } from "react";
-
-const StyledDiv = styled.div`
-  width: 20vw;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin: 9vh auto 3% auto;
-`;
+import StyledDiv from "../../styles/Board.Styled";
 
 const isFull = (board) => {
   return !board.some((element) => {

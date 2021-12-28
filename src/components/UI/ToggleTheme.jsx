@@ -19,6 +19,7 @@ const ToggleTheme = (props) => {
         onClick={() => {
           source === dark ? setSource(light) : setSource(dark);
           props.setTheme(!props.theme);
+          console.log(props.theme);
         }}
         src={source.toString()}
       />
