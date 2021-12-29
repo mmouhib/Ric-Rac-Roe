@@ -1,4 +1,5 @@
 import Reset from "./Reset";
+import Modal from "react-modal";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
 import { useState } from "react";
@@ -8,10 +9,14 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "../../themes";
 import { GlobalStyle, StyledTitle } from "../../styles/Game.Styled";
 
+// \n removes modal warning in console
+Modal.setAppElement("#root");
+
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [theme, setTheme] = useState(true);
   const [logo, setLogo] = useState("X");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [score, setScore] = useState({
     scoreCross: 0,
     scoreCircle: 0,
@@ -33,6 +38,12 @@ const Game = () => {
   return (
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <GlobalStyle />
+      <button onClick={() => setModalIsOpen(true)}>Customize</button>
+      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
+        <h1>Customize Modal:</h1>
+
+        <button onClick={() => setModalIsOpen(false)}>close</button>
+      </Modal>
       <div>
         <ToggleTheme theme={theme} setTheme={setTheme} />
         <Fullscreen theme={theme} />

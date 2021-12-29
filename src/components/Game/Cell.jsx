@@ -1,6 +1,6 @@
 import StyledCell from "../../styles/Cell.Styled";
 
-const Cell = ({ id, value, affectChoice, radar, setRadar }) => {
+export default ({ id, value, affectChoice, radar, setRadar }) => {
   return (
     <StyledCell
       id={id}
@@ -21,5 +21,3 @@ const Cell = ({ id, value, affectChoice, radar, setRadar }) => {
     </StyledCell>
   );
 };
-
-export default Cell;
