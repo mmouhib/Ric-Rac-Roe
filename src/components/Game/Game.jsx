@@ -1,16 +1,18 @@
 import Reset from "./Reset";
-import Modal from "react-modal";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
 import { useState } from "react";
 import Fullscreen from "../UI/Fullscreen.jsx";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import { ThemeProvider } from "styled-components";
+import { ModalProvider } from "styled-react-modal";
+import StyledModal, { StyledCloseX } from "../../styles/Modal.styled";
+import StyledButton from "../../styles/Button.styled";
 import { lightTheme, darkTheme } from "../../themes";
 import { GlobalStyle, StyledTitle } from "../../styles/Game.Styled";
 
 // \n removes modal warning in console
-Modal.setAppElement("#root");
+// Modal.setAppElement("#root");
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -37,29 +39,39 @@ const Game = () => {
 
   return (
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>
-      <GlobalStyle />
-      <button onClick={() => setModalIsOpen(true)}>Customize</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-        <h1>Customize Modal:</h1>
+      <ModalProvider>
+        <GlobalStyle />
 
-        <button onClick={() => setModalIsOpen(false)}>close</button>
-      </Modal>
-      <div>
-        <ToggleTheme theme={theme} setTheme={setTheme} />
-        <Fullscreen theme={theme} />
-        <StyledTitle theme={theme}>Ric Rac Roe</StyledTitle>
-        <Board
-          board={board}
-          setBoard={setBoard}
-          logo={logo}
-          setLogo={setLogo}
-          score={score}
-          setScore={setScore}
-        />
-        <Reset reset={resetBoard} content="Reset Board" />
-        <Score score={score} />
-        <Reset reset={resetScore} content="Reset Score" />
-      </div>
+        <StyledModal
+          isOpen={modalIsOpen}
+          onBackgroundClick={() => setModalIsOpen(false)}
+          onEscapeKeydown={() => setModalIsOpen(false)}
+        >
+          <StyledCloseX onClick={() => setModalIsOpen(false)}>X</StyledCloseX>
+          <h1>Customize your Game:</h1>
+
+          <button onClick={() => setModalIsOpen(false)}>close</button>
+        </StyledModal>
+        <div>
+          <ToggleTheme theme={theme} setTheme={setTheme} />
+          <Fullscreen theme={theme} />
+          <StyledTitle theme={theme}>Ric Rac Roe</StyledTitle>
+          <StyledButton onClick={() => setModalIsOpen(true)}>
+            Customize
+          </StyledButton>
+          <Board
+            board={board}
+            setBoard={setBoard}
+            logo={logo}
+            setLogo={setLogo}
+            score={score}
+            setScore={setScore}
+          />
+          <Reset reset={resetBoard} content="Reset Board" />
+          <Score score={score} />
+          <Reset reset={resetScore} content="Reset Score" />
+        </div>
+      </ModalProvider>
     </ThemeProvider>
   );
 };

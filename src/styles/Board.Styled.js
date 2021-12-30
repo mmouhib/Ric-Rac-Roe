@@ -5,7 +5,7 @@ const StyledDiv = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin: 9vh auto 3% auto;
+  margin: 7vh auto 3% auto;
 `;
 
 export default StyledDiv;
