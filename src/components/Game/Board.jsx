@@ -8,7 +8,15 @@ const isFull = (board) => {
   });
 };
 
-const Board = ({ board, setBoard, logo, setLogo, score, setScore }) => {
+const Board = ({
+  board,
+  setBoard,
+  logo,
+  setLogo,
+  score,
+  setScore,
+  cellBorderRadius,
+}) => {
   const [radar, setRadar] = useState(Array(9).fill(false));
 
   useEffect(() => {
@@ -50,6 +58,7 @@ const Board = ({ board, setBoard, logo, setLogo, score, setScore }) => {
             radar={radar}
             setRadar={setRadar}
             affectChoice={affectChoice}
+            cellBorderRadius={cellBorderRadius}
           />
         );
       })}

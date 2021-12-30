@@ -9,13 +9,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledTitle = styled.h1`
-  font-family: "Luckiest Guy", cursive;
+  font-family: "Bungee Shade", cursive;
   background-image: linear-gradient(90deg, red, blue);
   background-clip: text;
   color: transparent;
   text-align: center;
   font-size: 3rem;
-  margin: 2% 0 0 2%;
+  margin: 0 0 1% 2%;
 `;
 
 export { GlobalStyle, StyledTitle };

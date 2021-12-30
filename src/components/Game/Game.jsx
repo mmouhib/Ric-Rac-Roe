@@ -1,3 +1,4 @@
+import Modal from "./Modal";
 import Reset from "./Reset";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
@@ -6,13 +7,9 @@ import Fullscreen from "../UI/Fullscreen.jsx";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import { ThemeProvider } from "styled-components";
 import { ModalProvider } from "styled-react-modal";
-import StyledModal, { StyledCloseX } from "../../styles/Modal.styled";
 import StyledButton from "../../styles/Button.styled";
 import { lightTheme, darkTheme } from "../../themes";
 import { GlobalStyle, StyledTitle } from "../../styles/Game.Styled";
-
-// \n removes modal warning in console
-// Modal.setAppElement("#root");
 
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
@@ -24,6 +21,8 @@ const Game = () => {
     scoreCircle: 0,
     scoreDraw: 0,
   });
+
+  const [cellBorderRadius, setCellBorderRadius] = useState("25%");
 
   const resetBoard = () => {
     setBoard(Array(9).fill(""));
@@ -41,25 +40,21 @@ const Game = () => {
     <ThemeProvider theme={theme ? darkTheme : lightTheme}>
       <ModalProvider>
         <GlobalStyle />
-
-        <StyledModal
-          isOpen={modalIsOpen}
-          onBackgroundClick={() => setModalIsOpen(false)}
-          onEscapeKeydown={() => setModalIsOpen(false)}
-        >
-          <StyledCloseX onClick={() => setModalIsOpen(false)}>X</StyledCloseX>
-          <h1>Customize your Game:</h1>
-
-          <button onClick={() => setModalIsOpen(false)}>close</button>
-        </StyledModal>
         <div>
+          <Modal
+            setTheme={setTheme}
+            modalIsOpen={modalIsOpen}
+            setModalIsOpen={setModalIsOpen}
+            setCellBorderRadius={setCellBorderRadius}
+          />
           <ToggleTheme theme={theme} setTheme={setTheme} />
           <Fullscreen theme={theme} />
           <StyledTitle theme={theme}>Ric Rac Roe</StyledTitle>
-          <StyledButton onClick={() => setModalIsOpen(true)}>
+          <StyledButton onClick={() => setModalIsOpen(true)} value="Customize">
             Customize
           </StyledButton>
           <Board
+            cellBorderRadius={cellBorderRadius}
             board={board}
             setBoard={setBoard}
             logo={logo}

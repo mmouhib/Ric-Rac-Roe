@@ -5,7 +5,7 @@ const StyledCell = styled.div`
   width: 6vw;
   height: 6vw;
   border: 3px solid ${(props) => props.theme.cellBorderColor};
-  border-radius: 25%;
+  border-radius: ${(props) => props.cellBorderRadius};
   color: ${(props) => props.theme.cellColor};
   margin: 10px;
   cursor: pointer;
