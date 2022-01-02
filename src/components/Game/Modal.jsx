@@ -1,5 +1,3 @@
-import Settings from "../UI/Settings.jsx";
-
 import StyledModal, {
   StyledCloseX,
   StyledTitle,
@@ -24,7 +22,7 @@ const Modal = ({
         onEscapeKeydown={() => setModalIsOpen(false)}
       >
         <StyledCloseX onClick={() => setModalIsOpen(false)}>X</StyledCloseX>
-        <Settings onClick={() => setModalIsOpen(false)} />
+
         <StyledTitle>Customize your Game:</StyledTitle>
 
         <StyledRadioDiv>

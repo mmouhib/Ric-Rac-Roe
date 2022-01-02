@@ -3,11 +3,11 @@ import Reset from "./Reset";
 import Board from "./Board.jsx";
 import Score from "./Score.jsx";
 import { useState } from "react";
+import Settings from "../UI/Settings.jsx";
 import Fullscreen from "../UI/Fullscreen.jsx";
 import ToggleTheme from "../UI/ToggleTheme.jsx";
 import { ThemeProvider } from "styled-components";
 import { ModalProvider } from "styled-react-modal";
-import StyledButton from "../../styles/Button.styled";
 import { lightTheme, darkTheme } from "../../themes";
 import { GlobalStyle, StyledTitle } from "../../styles/Game.Styled";
 
@@ -50,9 +50,7 @@ const Game = () => {
           <ToggleTheme theme={theme} setTheme={setTheme} />
           <Fullscreen theme={theme} />
           <StyledTitle theme={theme}>Ric Rac Roe</StyledTitle>
-          <StyledButton onClick={() => setModalIsOpen(true)} value="Customize">
-            Customize
-          </StyledButton>
+          <Settings setModalIsOpen={setModalIsOpen} theme={theme} />
           <Board
             cellBorderRadius={cellBorderRadius}
             board={board}

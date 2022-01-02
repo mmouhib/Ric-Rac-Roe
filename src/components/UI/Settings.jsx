@@ -1,47 +1,33 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import FullscreenDark from "../../img/Fullscreen/fullscreenDark.png";
-import FullscreenLight from "../../img/Fullscreen/fullscreenLight.png";
-import exitFullscreenDark from "../../img/Fullscreen/exitFullscreenDark.png";
-import exitFullscreenLight from "../../img/Fullscreen/exitFullscreenLight.png";
+import SettingsLight from "../../img/SettingsIcons/dark.png";
+import SettingsDark from "../../img/SettingsIcons/light.png";
+import dark from "../../img/ToggleTheme/dark.png";
+import light from "../../img/ToggleTheme/light.png";
 
-const StyledFullscreen = styled.div`
-  position: absolute;
-  top: 2%;
-  right: 1%;
+const StyledSettings = styled.div`
+  //position: absolute;
+  //top: 8%;
+  //right: 47%;
+  margin: -0.4% 50%;
 `;
 
-const Settigns = ({ theme }) => {
-  const [source, setSource] = useState(FullscreenDark);
+const Settings = ({ theme, setModalIsOpen }) => {
+  const [source, setSource] = useState(SettingsLight);
 
   useEffect(() => {
-    if (source === FullscreenLight) setSource(FullscreenDark);
-    else if (source === FullscreenDark) setSource(FullscreenLight);
-    else if (source === exitFullscreenLight) setSource(exitFullscreenDark);
-    else if (source === exitFullscreenDark) setSource(exitFullscreenLight);
+    theme ? setSource(SettingsDark) : setSource(SettingsLight);
   }, [theme]);
 
-  // return (
-  //   <StyledFullscreen>
-  //     <img
-  //       src={source.toString()}
-  //       alt="FullscreenDark"
-  //       onClick={() => {
-  //         // toggle fullscreen
-  //         if (source === FullscreenLight || source === FullscreenDark) {
-  //           document.documentElement.requestFullscreen();
-  //         } else {
-  //           document.exitFullscreen();
-  //         }
-  //         // change icon on click
-  //         if (source === FullscreenLight) setSource(exitFullscreenLight);
-  //         else if (source === FullscreenDark) setSource(exitFullscreenDark);
-  //         else if (source === exitFullscreenLight) setSource(FullscreenLight);
-  //         else setSource(FullscreenDark);
-  //       }}
-  //     />
-  //   </StyledFullscreen>
-  // );
+  return (
+    <StyledSettings>
+      <img
+        src={source.toString()}
+        onClick={() => setModalIsOpen(true)}
+        alt="FullscreenDark"
+      />
+    </StyledSettings>
+  );
 };
 
-export default Settigns;
+export default Settings;
