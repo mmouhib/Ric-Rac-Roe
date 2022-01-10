@@ -4,6 +4,8 @@ const StyledCell = styled.div`
   font-size: 5vw;
   width: 6vw;
   height: 6vw;
+  min-height: 50px;
+  min-width: 50px;
   border: 3px solid ${(props) => props.theme.cellBorderColor};
   border-radius: ${(props) => props.cellBorderRadius};
   color: ${(props) => props.theme.cellColor};

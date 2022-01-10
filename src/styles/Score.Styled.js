@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const StyledScore = styled.div`
   text-align: center;
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
+  font-size: 100%;
   font-family: "Orbitron", sans-serif;
   margin: auto auto 2% 2%;
 

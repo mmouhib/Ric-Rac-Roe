@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import SettingsLight from "../../img/SettingsIcons/dark.png";
 import SettingsDark from "../../img/SettingsIcons/light.png";
-import dark from "../../img/ToggleTheme/dark.png";
-import light from "../../img/ToggleTheme/light.png";
 
 const StyledSettings = styled.div`
   //position: absolute;

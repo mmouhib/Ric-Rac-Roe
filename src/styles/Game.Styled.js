@@ -10,12 +10,10 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledTitle = styled.h1`
   font-family: "Bungee Shade", cursive;
-  background-image: linear-gradient(90deg, red, blue);
-  background-clip: text;
-  color: transparent;
+  color: lightpink;
   text-align: center;
   font-size: 3rem;
-  margin: 0 0 1% 2%;
+  margin: 0;
 `;
 
 export { GlobalStyle, StyledTitle };
